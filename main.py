@@ -2,7 +2,7 @@ import shutil
 from PIL import Image
 import torch.nn as nn
 from torch.autograd import Variable
-from nets.crackformer import crackformer
+from nets.crackformerII import crackformer
 from utils.utils import *
 from utils.Validator import *
 from utils.Crackloader import *
@@ -89,13 +89,13 @@ if __name__ == '__main__':
     netName = "crackformer"
     # 
     image_format = "jpg"
-    lable_format = "bmp"
+    lable_format = "png"
 
     total_epoch = 500
     lr_init = 0.001
     batch_size = 1
 
-    net = DeepCrack()
+    net = Crackformer()
 
     train_img_dir = "./datasets/"+ datasetName +"/train/" + dataName +".txt"
     valid_img_dir = "./datasets/"+datasetName+"/valid/Valid_image/"
